@@ -1,0 +1,44 @@
+<view class="page">
+  <view class="nav">
+    <view bindtap="click1" class="{{nav1}}">
+      <text>待办</text>
+    </view>
+    <view bindtap="click2" class="{{nav2}}">
+      <text>已办</text>
+    </view>
+  </view>
+  <view class="body">
+    <!--待办开始-->
+    <view wx:if="{{condition1}}">
+      <view class="guide">
+        <text>点击完成事项</text>
+      </view>
+      <view class="list1" wx:for="{{array}}" id="{{index}}" bindtap="short">
+        {{item}}
+      </view>
+      <!--输入框增加-->
+      <view class="btn">
+        <button id='add' bindtap="click" type="primary">增加</button>
+      </view>
+    </view>
+    <view class="area" wx:if="{{input}}" >
+    <!-- 按钮输入完成，或小键盘点击完成 -->
+      <form bindsubmit='bindFormsubmit'>
+        <textarea bindconfirm="confirm" auto-height placeholder="输入待办事项" auto-focus='true' name="textarea" />
+        <button  id="addTask" form-type='submit'>输入完成</button>
+      </form>
+      <view class="myToast" hidden="{{nullHouse}}">输入不可为空</view>
+    </view>
+    <!--待办结尾-->
+    <!--已办开始-->
+    <view wx:if="{{condition2}}" class="finish">
+      <view class="list2" wx:for="{{array1}}">
+        {{item}}
+      </view>
+      <button id='clearTask' bindtap='clearTask'>清空已办</button>
+    </view>
+    
+    
+    <!--已办结尾-->
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<view>
+<image class='background' src="{{src}}"></image>
+</view>
+
+<text>请选择背景颜色：</text>
+<view>
+ <button class='btn1' style="background:#89dcf8" bindtap="bule">变蓝</button>
+ <button class='btn1' style="background:#F4A7B9" bindtap="red">变红</button>
+</view>
+
+<button class='btn1'  style="background:#3197ed" bindtap="moren">
+  <view>还原默认</view>
+</button>
+
